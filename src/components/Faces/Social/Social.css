@@ -1,0 +1,80 @@
+/* Social.css */
+
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 2rem; /* Espaciado alrededor del contenido */
+    text-align: center;
+    transform: translateZ(1px); /* Mueve la cara ligeramente hacia adelante */
+    pointer-events: auto; /* Asegura que los eventos del mouse sean capturados */
+  }
+  
+  .social-title {
+    font-size: 2rem;
+    margin-bottom: 1rem; /* Tamaño de fuente para el título */
+  }
+  
+  @media (min-width: 640px) {
+    .social-title {
+      font-size: 2.25rem; /* Tamaño para pantallas pequeñas */
+    }
+    .social-links {
+        display: flex;
+        gap: 1rem; /* Espaciado entre los enlaces */
+        padding: 2rem;
+       
+      }
+  }
+  
+  @media (min-width: 768px) {
+    .social-title {
+      font-size: 2.5rem;
+       /* Tamaño para pantallas medianas */
+    }
+    .social-links {
+        display: flex;
+        gap: 1rem; /* Espaciado entre los enlaces */
+        padding-top: 2rem;
+       
+      }
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem; /* Espaciado entre los enlaces */
+    padding-top: 1rem;
+   
+  }
+  
+  .social-link {
+    padding: 1rem;
+    border-radius: 9999px;
+    color: white;
+    transition: background-color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+    z-index: 100; /* Aumenta el z-index significativamente */
+    display: inline-block; /* Aseguramos que el enlace tenga dimensiones */
+    border: 2px solid rgb(7, 2, 6); /* Borde temporal para debug */
+    transform: translateZ(10px); /* Mueve los enlaces aún más hacia adelante */
+  }
+  
+  .social-link:hover {
+    opacity: 0.8; /* Cambia la opacidad al pasar el ratón */
+  }
+  
+  .instagram-link {
+    background-color: #d1006b; /* Color de fondo de Instagram */
+  }
+  
+  .linkedin-link {
+    background-color: #0077b5; /* Color de fondo de LinkedIn */
+  }
+  
+  .github-link {
+    background-color: #333; /* Color de fondo de GitHub */
+  }

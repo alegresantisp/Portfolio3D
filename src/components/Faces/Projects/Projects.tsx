@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiFormik } from 'react-icons/si';
+import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs, SiFormik, SiTailwindcss, SiFirebase, SiGreensock } from 'react-icons/si';
 import './Projects.css'; // Asegúrate de importar el CSS
 
 const projects = [
@@ -12,6 +12,9 @@ const projects = [
     tools: [
       <FaReact key="react" className="text-blue-500" />,
       <SiTypescript key="typescript" className="text-blue-600" />,
+      <SiNextdotjs key="nextjs" className="text-black" />,
+      <SiTailwindcss key="tailwind" className="text-teal-400" />,
+      <SiFormik key="formik" className="text-blue-400" />,
       <FaHtml5 key="html" className="text-orange-500" />,
       <FaCss3Alt key="css" className="text-blue-600" />,
       <FaJsSquare key="js" className="text-yellow-500" />,
@@ -25,6 +28,10 @@ const projects = [
       <FaReact key="react" className="text-blue-500" />,
       <SiTypescript key="typescript" className="text-blue-600" />,
       <SiTailwindcss key="tailwind" className="text-teal-400" />,
+      <SiNextdotjs key="nextjs" className="text-black" />,
+      <SiFormik key="formik" className="text-blue-400" />,
+      <SiFirebase key="firebase" className="text-yellow-500" />,
+      <FaJsSquare key="js" className="text-yellow-500" />,
     ],
   },
   {
@@ -33,8 +40,9 @@ const projects = [
     link: 'https://vinodemarteoficial.vercel.app/',
     tools: [
       <FaReact key="react" className="text-blue-500" />,
-      <FaNodeJs key="node" className="text-green-600" />,
-      <SiFormik key="formik" className="text-yellow-600" />,
+      <SiNextdotjs key="nextjs" className="text-black" />,
+      <SiTailwindcss key="tailwind" className="text-teal-400" />,
+      <SiGreensock key="gsap" className="text-green-500" />,
     ],
   },
 ];

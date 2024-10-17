@@ -1,3 +1,4 @@
+// Cube.tsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Cube.css';
@@ -7,10 +8,11 @@ import Social from './Faces/Social/Social';
 import Projects from './Faces/Projects/Projects';
 
 const faces = [
-<Home />,
-<Social />,
-<Projects />,
-<About />,];
+  { component: <Home />, title: "Home" },
+  { component: <About />, title: "About" },
+  { component: <Projects />, title: "Projects" },
+  { component: <Social />, title: "Social" },
+];
 
 const Cube = () => {
   const [currentFace, setCurrentFace] = useState(0);
@@ -58,9 +60,18 @@ const Cube = () => {
         transition={{ duration: 0.8, ease: 'easeInOut' }}
       >
         {faces.map((face, index) => (
-          <div key={index} className={`cube-face face-${index}`}>
-            {face}
-          </div>
+          <motion.div 
+            key={index} 
+            className={`cube-face face-${index}`}
+            style={{ 
+              pointerEvents: currentFace === index ? 'auto' : 'none',
+              zIndex: currentFace === index ? 1 : 0,
+              opacity: currentFace === index ? 1 : 0.5,
+              transition: 'opacity 0.3s ease' // Agregamos transición de opacidad
+            }}
+          >
+            {face.component}
+          </motion.div>
         ))}
       </motion.div>
     </motion.div>
@@ -68,3 +79,5 @@ const Cube = () => {
 };
 
 export default Cube;
+
+

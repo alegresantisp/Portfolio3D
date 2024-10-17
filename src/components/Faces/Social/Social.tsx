@@ -1,38 +1,46 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import './Social.css'; // Importa el archivo de estilos
 
 const Social = () => {
-  return (
-    <div className="flex flex-col items-center justify-center h-full w-full p-8 text-center">
-      <h1 className="text-4xl font-bold mb-4">Connect with Me</h1>
-      <div className="flex space-x-6 text-4xl">
-        <a
-          href="https://www.instagram.com/santialegree/" // Instagram
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-pink-500 hover:text-pink-600 transition"
-        >
-          <FaInstagram />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/santiago-alegre-67b288193/" // LinkedIn
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-700 hover:text-blue-800 transition"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://github.com/alegresantisp" // GitHub
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-800 hover:text-gray-900 transition"
-        >
-          <FaGithub />
-        </a>
-      </div>
-    </div>
-  );
-};
+    const handleLinkClick = (platform: string) => {
+        console.log(`Clicked on ${platform}`);
+      };
+    
+      return (
+        <div className="social-container">
+          <h1 className="social-title">Connect with Me</h1>
+          <div className="social-links">
+            <a
+              href="https://www.instagram.com/santialegree/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link instagram-link"
+              onClick={() => handleLinkClick('Instagram')} // Añade onClick
+            >
+              <FaInstagram className="text-3xl" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/santiago-alegre-67b288193/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link linkedin-link"
+              onClick={() => handleLinkClick('LinkedIn')} // Añade onClick
+            >
+              <FaLinkedin className="text-3xl" />
+            </a>
+            <a
+              href="https://github.com/alegresantisp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link github-link"
+              onClick={() => handleLinkClick('GitHub')} // Añade onClick
+            >
+              <FaGithub className="text-3xl" />
+            </a>
+          </div>
+        </div>
+      );
+    };
 
 export default Social;
