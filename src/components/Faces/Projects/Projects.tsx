@@ -6,7 +6,7 @@ import './Projects.css'; // Asegúrate de importar el CSS
 
 interface Project {
   title: string;
-  description: string;
+  description: string; // Mantén la descripción aquí
   link: string;
   tools: React.ReactNode[];
 }
@@ -56,6 +56,7 @@ const projects: Project[] = [
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
   };
@@ -75,15 +76,14 @@ const Projects = () => {
             onClick={() => handleProjectClick(project)}
           >
             <h2 className="project-title text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2 text-blue-300">{project.title}</h2>
-            <p className="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">{project.description}</p>
             <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project-link"
-                onClick={(e) => e.stopPropagation()}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+              onClick={(e) => e.stopPropagation()}
             >
-                Ver Proyecto
+              Ver Proyecto
             </a>
           </div>
         ))}
@@ -92,6 +92,7 @@ const Projects = () => {
       {selectedProject && (
         <Modal
           title={selectedProject.title}
+          description={selectedProject.description} 
           tools={selectedProject.tools}
           onClose={handleCloseModal}
         />
@@ -101,3 +102,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

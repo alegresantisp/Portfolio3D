@@ -1,6 +1,6 @@
 .projects-grid {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .project-card {
@@ -10,8 +10,8 @@
     background-color: #262a30; /* fallback color */
     background-image: linear-gradient(to bottom right, #4B5563, #1F2937);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    padding: 1rem; /* Añade un poco de padding para el contenido */
-    height: 100%; /* Asegúrate de que tenga altura */
+    padding: 0.75rem; /* Añade un poco de padding para el contenido */
+    height: auto; /* Asegúrate de que tenga altura */
   }
 
 .project-card:hover {
@@ -40,19 +40,24 @@
 }
 
 @media (min-width: 640px) {
-  .projects-grid {
-    gap: 1rem;
+    .projects-grid {
+      gap: 0.75rem; /* Ajusta el espacio para pantallas pequeñas */
+    }
   }
-}
-
-@media (min-width: 768px) {
-  .projects-grid {
-    gap: 1.25rem;
+  
+  @media (min-width: 768px) {
+    .projects-grid {
+      gap: 1rem; /* Ajusta el espacio para pantallas medianas */
+    }
   }
-}
 
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.project-title {
+  font-size: 1rem; /* Ajusta el tamaño del título aquí */
+  /* Puedes ajustar otros estilos si lo deseas */
 }
