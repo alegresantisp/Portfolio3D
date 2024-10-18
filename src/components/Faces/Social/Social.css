@@ -1,80 +1,77 @@
 /* Social.css */
 
 .social-container {
-    display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.social-title {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+  width: 100%;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  min-width: 80px;
+  padding: 2%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 5%;
+}
+
+.social-name {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  text-align: center;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.instagram-link:hover { color: #ca1b56; }
+.linkedin-link:hover { color: #1935b1; }
+.github-link:hover { color: #000000; }
+
+@media (max-width: 768px) {
+  .social-links {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    padding: 2rem; /* Espaciado alrededor del contenido */
-    text-align: center;
-    transform: translateZ(1px); /* Mueve la cara ligeramente hacia adelante */
-    pointer-events: auto; /* Asegura que los eventos del mouse sean capturados */
   }
-  
-  .social-title {
-    font-size: 2rem;
-    margin-bottom: 1rem; /* Tamaño de fuente para el título */
-  }
-  
-  @media (min-width: 640px) {
-    .social-title {
-      font-size: 2.25rem; /* Tamaño para pantallas pequeñas */
-    }
-    .social-links {
-        display: flex;
-        gap: 1rem; /* Espaciado entre los enlaces */
-        padding: 2rem;
-       
-      }
-  }
-  
-  @media (min-width: 768px) {
-    .social-title {
-      font-size: 2.5rem;
-       /* Tamaño para pantallas medianas */
-    }
-    .social-links {
-        display: flex;
-        gap: 1rem; /* Espaciado entre los enlaces */
-        padding-top: 2rem;
-       
-      }
-  }
-  
-  .social-links {
-    display: flex;
-    gap: 1rem; /* Espaciado entre los enlaces */
-    padding-top: 1rem;
-   
-  }
-  
+
   .social-link {
-    padding: 1rem;
-    border-radius: 9999px;
-    color: white;
-    transition: background-color 0.3s ease;
-    position: relative;
-    cursor: pointer;
-    z-index: 100; /* Aumenta el z-index significativamente */
-    display: inline-block; /* Aseguramos que el enlace tenga dimensiones */
-    border: 2px solid rgb(7, 2, 6); /* Borde temporal para debug */
-    transform: translateZ(10px); /* Mueve los enlaces aún más hacia adelante */
+    width: 60%;
+    margin-bottom: 5%;
   }
-  
-  .social-link:hover {
-    opacity: 0.8; /* Cambia la opacidad al pasar el ratón */
-  }
-  
-  .instagram-link {
-    background-color: #d1006b; /* Color de fondo de Instagram */
-  }
-  
-  .linkedin-link {
-    background-color: #0077b5; /* Color de fondo de LinkedIn */
-  }
-  
-  .github-link {
-    background-color: #333; /* Color de fondo de GitHub */
-  }
+}
+
+/* Ensure buttons are clickable */
+.social-link button {
+  cursor: pointer;
+  pointer-events: auto;
+}

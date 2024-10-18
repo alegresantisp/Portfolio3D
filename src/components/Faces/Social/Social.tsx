@@ -3,44 +3,33 @@ import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Social.css'; // Importa el archivo de estilos
 
 const Social = () => {
-    const handleLinkClick = (platform: string) => {
-        console.log(`Clicked on ${platform}`);
-      };
-    
-      return (
-        <div className="social-container">
-          <h1 className="social-title">Connect with Me</h1>
-          <div className="social-links">
-            <a
-              href="https://www.instagram.com/santialegree/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link instagram-link"
-              onClick={() => handleLinkClick('Instagram')} // Añade onClick
-            >
-              <FaInstagram className="text-3xl" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/santiago-alegre-67b288193/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link linkedin-link"
-              onClick={() => handleLinkClick('LinkedIn')} // Añade onClick
-            >
-              <FaLinkedin className="text-3xl" />
-            </a>
-            <a
-              href="https://github.com/alegresantisp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link github-link"
-              onClick={() => handleLinkClick('GitHub')} // Añade onClick
-            >
-              <FaGithub className="text-3xl" />
-            </a>
-          </div>
-        </div>
-      );
+    const handleLinkClick = (url: string) => {
+        window.open(url, '_blank', 'noopener,noreferrer');
     };
+
+    const socialLinks = [
+        { icon: FaInstagram, url: "https://www.instagram.com/santialegree/", name: "Instagram" },
+        { icon: FaLinkedin, url: "https://www.linkedin.com/in/santiago-alegre-67b288193/", name: "LinkedIn" },
+        { icon: FaGithub, url: "https://github.com/alegresantisp", name: "GitHub" },
+    ];
+
+    return (
+        <div className="social-container">
+            <h1 className="social-title">Connect with Me</h1>
+            <div className="social-links">
+                {socialLinks.map(({ icon: Icon, url, name }) => (
+                    <button
+                        key={name}
+                        className={`social-link ${name.toLowerCase()}-link`}
+                        onClick={() => handleLinkClick(url)}
+                    >
+                        <Icon className="social-icon" />
+                        <span className="social-name">{name}</span>
+                    </button>
+                ))}
+            </div>
+        </div>
+    );
+};
 
 export default Social;

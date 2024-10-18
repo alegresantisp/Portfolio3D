@@ -1,79 +1,75 @@
 /* General Styles */
 .scene {
-    perspective: 220vh;
     width: 100vw;
     height: 100vh;
+    perspective: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .cube {
-    width: 60vw;
-    height: 50vh;
-    max-width: 1000px;
-    max-height: 700px;
-    margin-top: -70px;
+    width: 48vw;
+    height: 60vh;
+    max-width: 600px;
+    max-height: 500px;
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(-15deg) rotateY(15deg); /* Añade una rotación inicial */
-    transition: transform 0.3s ease; /* Suaviza la transición al rotar */
+    transition: transform 0.8s;
+    transform: rotateX(-15deg) rotateY(15deg);
 }
 
 .cube-face {
     position: absolute;
     width: 100%;
-    height: 120%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(75, 0, 130, 0.8); /* Violeta oscuro con transparencia */
+    background-color: rgba(75, 0, 130, 0.8);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 2vmin; /* Tamaño de fuente ajustado */
-    overflow: hidden; /* Asegura que el contenido no sobresalga */
-    padding: 29px;
-    box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
+    font-size: 1.8vmin;
+    padding: 20px;
+    box-sizing: border-box;
     text-align: center;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra interna */
-    backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
-    
-  }
-
-  .face-0 { transform: rotateY(0deg) translateZ(calc(60vw)); }
-  .face-1 { transform: rotateY(90deg) translateZ(calc(60vw)); }
-  .face-2 { transform: rotateY(180deg) translateZ(calc(60vw));  }
-  .face-3 { transform: rotateY(270deg) translateZ(calc(60vw));  }
-  
-
-
-@media (min-width: 1024px) {
-    .scene {
-        perspective: 420vh;
-    }
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.4s, transform 0.4s;
+    opacity: 0.3;
+    pointer-events: none;
 }
+
+.cube-face.face-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.face-0 { transform: rotateY(0deg) translateZ(25vw); }
+.face-1 { transform: rotateY(90deg) translateZ(25vw); }
+.face-2 { transform: rotateY(180deg) translateZ(25vw); }
+.face-3 { transform: rotateY(270deg) translateZ(25vw); }
 
 @media (max-width: 768px) {
     .cube {
-        height: 60vh;
-        margin-top: -50px; 
-        /* Increase height for medium screens */
+        width: 60vw;
+        height: 50vh;
     }
-    .cube-face {
-        font-size: 3vmin;
-        padding: 15px;
-        height: 100%; /* Increase face height */
+    .face-0 { transform: rotateY(0deg) translateZ(40vw); }
+    .face-1 { transform: rotateY(90deg) translateZ(40vw); }
+    .face-2 { transform: rotateY(180deg) translateZ(40vw); }
+    .face-3 { transform: rotateY(270deg) translateZ(40vw); }
     }
-}
 
 @media (max-width: 480px) {
     .cube {
-        height: 70vh;
-         margin-top: -40px;/* Further increase height for small screens */
+        width: 70vw;
+        height: 60vh;
     }
-    .cube-face {
-        font-size: 4vmin;
-        padding: 10px;
-        height: 100%; /* Further increase face height */
+
+    .face-0 { transform: rotateY(0deg) translateZ(40vw); }
+    .face-1 { transform: rotateY(90deg) translateZ(40vw); }
+    .face-2 { transform: rotateY(180deg) translateZ(40vw); }
+    .face-3 { transform: rotateY(270deg) translateZ(40vw); }
     }
-}

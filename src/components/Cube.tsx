@@ -36,48 +36,37 @@ const Cube = () => {
     rotateCube(direction);
   };
 
-  const cubeRotation: { [key: number]: { rotateY: number } } = {
-    0: { rotateY: 0 },
-    1: { rotateY: -90 },
-    2: { rotateY: -180 },
-    3: { rotateY: -270 },
+  const cubeRotation = {
+    rotateY: currentFace * -90,
   };
 
   return (
-    <motion.div
+    <div
       className="scene"
       onWheel={handleScroll}
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={(event, info) => {
-        if (info.offset.x < 0) handleSwipe('left');
-        else handleSwipe('right');
-      }}
     >
       <motion.div
         className="cube"
-        animate={cubeRotation[currentFace as keyof typeof cubeRotation]}
+        animate={cubeRotation}
         transition={{ duration: 0.8, ease: 'easeInOut' }}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={(event, info) => {
+          if (info.offset.x < -50) handleSwipe('left');
+          else if (info.offset.x > 50) handleSwipe('right');
+        }}
       >
         {faces.map((face, index) => (
-          <motion.div 
+          <div 
             key={index} 
-            className={`cube-face face-${index}`}
-            style={{ 
-              pointerEvents: currentFace === index ? 'auto' : 'none',
-              zIndex: currentFace === index ? 1 : 0,
-              opacity: currentFace === index ? 1 : 0.5,
-              transition: 'opacity 0.3s ease' // Agregamos transición de opacidad
-            }}
+            className={`cube-face face-${index} ${currentFace === index ? 'face-active' : ''}`}
           >
             {face.component}
-          </motion.div>
+          </div>
         ))}
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
 export default Cube;
-
-

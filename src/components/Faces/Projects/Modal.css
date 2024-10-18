@@ -1,4 +1,3 @@
-/* Modal */
 .modal-background {
     background-color: rgba(0, 0, 0, 0.7);
   }
@@ -9,7 +8,7 @@
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    width: 400px; /* Puedes ajustar este tamaño */
+    width: 500px; /* Ajuste de tamaño para que sea más grande */
   }
   
   .modal-title {
@@ -29,5 +28,28 @@
   
   .modal-close-button:hover {
     background-color: #3498db;
+  }
+  
+  /* Estilos del grid para organizar los iconos de forma más libre */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Flexible */
+    gap: 10px; /* Espacio entre los íconos */
+    justify-items: center; /* Centra los íconos horizontalmente */
+    align-items: center; /* Centra los íconos verticalmente */
+  }
+  
+  /* Tamaño de los íconos más grande */
+  .icon-grid > * {
+    font-size: 60px; /* Ajusta el tamaño de los íconos */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.05); /* Fondo claro para resaltar */
+    border-radius: 12px; /* Bordes redondeados para los íconos */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto al pasar sobre los íconos */
+  .icon-grid > *:hover {
+    transform: scale(1.1); /* Agranda ligeramente el ícono al pasar el ratón */
   }
   
