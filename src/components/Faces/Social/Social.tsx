@@ -15,7 +15,7 @@ const Social = () => {
 
     return (
         <div className="social-container">
-            <h1 className="social-title">Connect with Me</h1>
+            <h1 className="social-title">Conectá conmigo</h1>
             <div className="social-links">
                 {socialLinks.map(({ icon: Icon, url, name }) => (
                     <button

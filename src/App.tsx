@@ -2,12 +2,13 @@ import React from 'react';
 import Cube from './components/Cube';
 import './App.css';
 
-
 function App() {
   return (
-    <div className="App">
-      <Cube />
-    </div>
+ 
+      <div className="App">
+        <Cube />
+      </div>
+   
   );
 }
 

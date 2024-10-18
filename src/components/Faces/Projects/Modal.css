@@ -1,23 +1,22 @@
 .modal-background {
     background-color: rgba(0, 0, 0, 0.7);
   }
-  
   .modal-content {
-    background-color: white;
+    background: linear-gradient(to bottom, #e0e0e0, #514085); /* Degradado de gris claro a gris violáceo */
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 90%;
     width: 500px; /* Ajuste de tamaño para que sea más grande */
-  }
+}
   
   .modal-title {
-    color: #2c3e50;
+    color: #1b1d1f;
     margin-bottom: 10px;
   }
   
   .modal-close-button {
-    background-color: #2980b9;
+    background-color: #75396f;
     color: white;
     padding: 10px 20px;
     border-radius: 6px;
@@ -27,7 +26,7 @@
   }
   
   .modal-close-button:hover {
-    background-color: #3498db;
+    background-color: #ac34db;
   }
   
   /* Estilos del grid para organizar los iconos de forma más libre */
@@ -41,12 +40,12 @@
   
   /* Tamaño de los íconos más grande */
   .icon-grid > * {
-    font-size: 60px; /* Ajusta el tamaño de los íconos */
+    font-size: 80px; /* Aumenta el tamaño de los íconos */
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.05); /* Fondo claro para resaltar */
     border-radius: 12px; /* Bordes redondeados para los íconos */
     transition: transform 0.3s ease;
-  }
+}
   
   /* Efecto al pasar sobre los íconos */
   .icon-grid > *:hover {

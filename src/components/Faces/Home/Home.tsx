@@ -17,8 +17,9 @@ const Home = () => {
       
       {/* Texto y detalles a la derecha */}
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">Front End Developer</h1>
-        <h2 className="text-xl sm:text-2xl text-gray-600 mb-3 sm:mb-4 md:mb-6">Santiago Alegre</h2>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4">Desarrollador Full Stack</h1>
+        <h2 className="text-xs sm:text-sm text-white mb-3 sm:mb-1 md:mb-2 sm:mt-1 md:mt-1">Especializado en Front End</h2>
+        <h2 className="text-xl sm:text-2xl text-gray-500 mb-3 sm:mb-4 md:mb-6">Santiago Alegre</h2>
         
         {/* Íconos de tecnologías */}
         <div className="flex flex-wrap justify-center md:justify-start gap-2 sm:gap-3 md:gap-4 text-2xl sm:text-3xl md:text-4xl">

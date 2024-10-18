@@ -4,10 +4,17 @@ import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs, SiFormik, SiTailwindcss, SiFirebase, SiGreensock } from 'react-icons/si';
 import './Projects.css'; // Asegúrate de importar el CSS
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  link: string;
+  tools: React.ReactNode[];
+}
+
+const projects: Project[] = [
   {
     title: 'Ribuzz',
-    description: 'Una plataforma social para conectar y compartir.',
+    description: 'Una plataforma para conectar emprendedores.',
     link: 'https://ribuzz.vercel.app/',
     tools: [
       <FaReact key="react" className="text-blue-500" />,
@@ -21,7 +28,7 @@ const projects = [
     ],
   },
   {
-    title: 'Habits',
+    title: 'HabitTracker',
     description: 'Una aplicación para rastrear y mejorar tus hábitos diarios.',
     link: 'https://habits-sandy-omega.vercel.app/login',
     tools: [
@@ -36,21 +43,20 @@ const projects = [
   },
   {
     title: 'Vino de Marte',
-    description: 'Un sitio web dedicado a los amantes del vino.',
+    description: 'Sitio Oficial de la banda Vino de Marte.',
     link: 'https://vinodemarteoficial.vercel.app/',
     tools: [
       <FaReact key="react" className="text-blue-500" />,
       <SiNextdotjs key="nextjs" className="text-black" />,
-      <SiTailwindcss key="tailwind" className="text-teal-400" />,
-      <SiGreensock key="gsap" className="text-green-500" />,
+      <SiTailwindcss key="tailwind" className="text-teal-600" />,
+      <SiGreensock key="gsap" className="text-green-800" />,
     ],
   },
 ];
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
-
-  const handleProjectClick = (project: any) => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
   };
 
@@ -60,7 +66,7 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full p-4 sm:p-6 md:p-8 text-center">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">My Projects</h1>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Mis Proyectos</h1>
       <div className="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 w-full max-w-5xl">
         {projects.map((project, index) => (
           <div
@@ -71,13 +77,13 @@ const Projects = () => {
             <h2 className="project-title text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2 text-blue-300">{project.title}</h2>
             <p className="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">{project.description}</p>
             <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-link text-xs sm:text-sm text-blue-400 hover:text-blue-300 underline"
-              onClick={(e) => e.stopPropagation()}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+                onClick={(e) => e.stopPropagation()}
             >
-              View Project
+                Ver Proyecto
             </a>
           </div>
         ))}

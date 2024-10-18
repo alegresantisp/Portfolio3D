@@ -56,7 +56,7 @@
         width: 60vw;
         height: 50vh;
     }
-    .face-0 { transform: rotateY(0deg) translateZ(40vw); }
+.face-0 { transform: rotateY(0deg) translateZ(40vw); }
     .face-1 { transform: rotateY(90deg) translateZ(40vw); }
     .face-2 { transform: rotateY(180deg) translateZ(40vw); }
     .face-3 { transform: rotateY(270deg) translateZ(40vw); }
