@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaGitAlt, FaNodeJs } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiFormik, SiFirebase, SiExpress, SiNextdotjs, SiMongodb } from 'react-icons/si';
+import { SiTypescript, SiTailwindcss, SiFormik, SiFirebase, SiExpress, SiNextdotjs, SiMongodb, SiNestjs  } from 'react-icons/si';
 
 
 const Home = () => {
@@ -30,6 +30,7 @@ const Home = () => {
           <FaJsSquare className="text-yellow-500" />
           <FaGitAlt className="text-orange-600" />
           <FaNodeJs className="text-green-600" />
+          <SiNestjs className="text-red-600" />
           <SiTailwindcss className="text-teal-400" />
           <SiFormik className="text-yellow-600" />
           <SiFirebase className="text-yellow-500" />
