@@ -1,54 +1,69 @@
 .modal-background {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, #e0e0e0, #514085);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 500px;
+}
+
+.modal-title {
+  color: #1b1d1f;
+  margin-bottom: 10px;
+}
+
+.modal-close-button {
+  background-color: #75396f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-close-button:hover {
+  background-color: #ac34db;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.icon-grid > * {
+  font-size: 60px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.icon-grid > *:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 640px) {
   .modal-content {
-    background: linear-gradient(to bottom, #e0e0e0, #514085); /* Degradado de gris claro a gris violáceo */
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 90%;
-    width: 500px; /* Ajuste de tamaño para que sea más grande */
-}
-  
-  .modal-title {
-    color: #1b1d1f;
-    margin-bottom: 10px;
+    padding: 15px;
+    width: 95%;
   }
-  
-  .modal-close-button {
-    background-color: #75396f;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .modal-close-button:hover {
-    background-color: #ac34db;
-  }
-  
-  /* Estilos del grid para organizar los iconos de forma más libre */
+
   .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Flexible */
-    gap: 10px; /* Espacio entre los íconos */
-    justify-items: center; /* Centra los íconos horizontalmente */
-    align-items: center; /* Centra los íconos verticalmente */
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 5px;
   }
-  
-  /* Tamaño de los íconos más grande */
+
   .icon-grid > * {
-    font-size: 80px; /* Aumenta el tamaño de los íconos */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.05); /* Fondo claro para resaltar */
-    border-radius: 12px; /* Bordes redondeados para los íconos */
-    transition: transform 0.3s ease;
-}
-  
-  /* Efecto al pasar sobre los íconos */
-  .icon-grid > *:hover {
-    transform: scale(1.1); /* Agranda ligeramente el ícono al pasar el ratón */
+    font-size: 40px;
+    padding: 10px;
   }
-  
+}
+

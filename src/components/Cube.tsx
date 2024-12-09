@@ -1,4 +1,3 @@
-// Cube.tsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Cube.css';
@@ -7,15 +6,31 @@ import About from './Faces/About/About';
 import Social from './Faces/Social/Social';
 import Projects from './Faces/Projects/Projects';
 
-const faces = [
-  { component: <Home />, title: "Home" },
-  { component: <About />, title: "About" },
-  { component: <Projects />, title: "Projects" },
-  { component: <Social />, title: "Social" },
-];
+interface CubeProps {
+  t: {
+    developer: string;
+    specialized: string;
+    aboutMe: string;
+    hello: string;
+    certificate: string;
+    live: string;
+    projects: string;
+    connect: string;
+    viewProject: string;
+  };
+  language: 'es' | 'en';  // Agregar la propiedad language
+  toggleLanguage: () => void;  // Agregar la propiedad toggleLanguage
+}
 
-const Cube = () => {
+const Cube: React.FC<CubeProps> = ({ t, language, toggleLanguage }) => {
   const [currentFace, setCurrentFace] = useState(0);
+
+  const faces = [
+    { component: <Home t={t} language={language} toggleLanguage={toggleLanguage} />, title: "Home" }, // Pasamos language y toggleLanguage
+    { component: <About t={t} />, title: "About" },
+    { component: <Projects t={t} />, title: "Projects" },
+    { component: <Social t={t} />, title: "Social" },
+  ];
 
   const rotateCube = (direction: 'left' | 'right') => {
     setCurrentFace((prev) => {
@@ -60,13 +75,13 @@ const Cube = () => {
         transition={{ duration: 0.8, ease: 'easeInOut' }}
       >
         {faces.map((face, index) => (
-          <motion.div 
-            key={index} 
+          <motion.div
+            key={index}
             className={`cube-face face-${index} ${currentFace === index ? 'face-active' : ''}`}
-            style={{ 
+            style={{
               pointerEvents: 'auto',
               opacity: currentFace === index ? 1 : 0.5,
-              transition: 'opacity 0.3s ease, z-index 0s', 
+              transition: 'opacity 0.3s ease, z-index 0s',
             }}
           >
             {face.component}

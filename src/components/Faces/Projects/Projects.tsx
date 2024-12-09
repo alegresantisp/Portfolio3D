@@ -6,7 +6,6 @@ import './Projects.css'; // Asegúrate de importar el CSS
 
 interface Project {
   title: string;
-  description: string; // Mantén la descripción aquí
   link: string;
   tools: React.ReactNode[];
 }
@@ -14,7 +13,6 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'Ribuzz',
-    description: 'Una plataforma para conectar emprendedores.',
     link: 'https://ribuzz.vercel.app/',
     tools: [
       <FaReact key="react" className="text-blue-500" />,
@@ -29,7 +27,6 @@ const projects: Project[] = [
   },
   {
     title: 'HabitTracker',
-    description: 'Una aplicación para rastrear y mejorar tus hábitos diarios.',
     link: 'https://habits-sandy-omega.vercel.app/login',
     tools: [
       <FaReact key="react" className="text-blue-500" />,
@@ -43,7 +40,6 @@ const projects: Project[] = [
   },
   {
     title: 'Vino de Marte',
-    description: 'Sitio Oficial de la banda Vino de Marte.',
     link: 'https://vinodemarteoficial.vercel.app/',
     tools: [
       <FaReact key="react" className="text-blue-500" />,
@@ -54,7 +50,7 @@ const projects: Project[] = [
   },
 ];
 
-const Projects = () => {
+const Projects = ({ t }: { t: { projects: string; viewProject: string } }) => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   
   const handleProjectClick = (project: Project) => {
@@ -67,7 +63,7 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full p-4 sm:p-6 md:p-8 text-center">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Mis Proyectos</h1>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{t.projects}</h1>
       <div className="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 w-full max-w-5xl">
         {projects.map((project, index) => (
           <div
@@ -83,7 +79,7 @@ const Projects = () => {
               className="project-link"
               onClick={(e) => e.stopPropagation()}
             >
-              Ver Proyecto
+              {t.viewProject}
             </a>
           </div>
         ))}
@@ -92,7 +88,6 @@ const Projects = () => {
       {selectedProject && (
         <Modal
           title={selectedProject.title}
-          description={selectedProject.description} 
           tools={selectedProject.tools}
           onClose={handleCloseModal}
         />
@@ -102,4 +97,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
