@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiFormik, SiTailwindcss, SiFirebase, SiGreensock } from 'react-icons/si';
+import { SiTypescript, SiNextdotjs, SiFormik, SiTailwindcss, SiFirebase, SiGreensock, SiNestjs, SiRender, SiVercel } from 'react-icons/si';
 import './Projects.css'; // Asegúrate de importar el CSS
 
 interface Project {
@@ -48,6 +48,17 @@ const projects: Project[] = [
       <SiGreensock key="gsap" className="text-green-800" />,
     ],
   },
+  {
+    title: 'PocketCare',
+    link: 'https://frontendmisgastos.vercel.app/',
+    tools: [
+      <SiNextdotjs key="nextjs" className="text-black" />,
+      <SiTailwindcss key="tailwind" className="text-teal-600" />,
+      <SiNestjs key="nestjs" className="text-e83e8c" />,
+      <SiRender key="render" className="text-blue-500" />,
+      <SiVercel key="vercel" className="text-black" />,
+    ],
+  }
 ];
 
 const Projects = ({ t }: { t: { projects: string; viewProject: string } }) => {
