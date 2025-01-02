@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 import { FaReact, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiFormik, SiTailwindcss, SiFirebase, SiGreensock, SiNestjs, SiRender, SiVercel } from 'react-icons/si';
+import { SiTypescript, SiNextdotjs, SiFormik, SiTailwindcss, SiFirebase, SiGreensock, SiNestjs, SiRender, SiVercel, SiReact, SiVite } from 'react-icons/si';
 import './Projects.css'; // Asegúrate de importar el CSS
 
 interface Project {
@@ -57,6 +57,17 @@ const projects: Project[] = [
       <SiNestjs key="nestjs" className="text-e83e8c" />,
       <SiRender key="render" className="text-blue-500" />,
       <SiVercel key="vercel" className="text-black" />,
+    ],
+  },
+  {
+    title: 'TodoList',
+    link: 'https://simpletodolist-phi.vercel.app/',
+    tools: [
+      <SiVercel key="vercel" className="text-black" />,
+      <SiReact key="react" className="text-blue-600" />,
+      <SiVite key="vite" className="text-orange-600" />,
+      <SiTailwindcss key="tailwind" className="text-teal-600" />,
+      <SiTypescript key="typescript" className="text-blue-500" />,
     ],
   }
 ];
