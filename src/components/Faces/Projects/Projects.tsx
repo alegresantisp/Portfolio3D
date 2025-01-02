@@ -50,7 +50,7 @@ const projects: Project[] = [
   },
   {
     title: 'PocketCare',
-    link: 'https://frontendmisgastos.vercel.app/',
+    link: 'https://pocketcare.vercel.app/',
     tools: [
       <SiNextdotjs key="nextjs" className="text-black" />,
       <SiTailwindcss key="tailwind" className="text-teal-600" />,
