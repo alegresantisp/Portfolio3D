@@ -84,21 +84,21 @@ const Projects = ({ t }: { t: { projects: string; viewProject: string } }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-full w-full p-4 sm:p-6 md:p-8 text-center">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{t.projects}</h1>
-      <div className="projects-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 w-full max-w-5xl">
+    <div className="flex flex-col items-center justify-center min-h-screen w-full p-2 sm:p-4 md:p-6 text-center">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">{t.projects}</h1>
+      <div className="projects-grid grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 md:gap-4 w-full max-w-5xl">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="project-card p-2 sm:p-3 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer bg-gradient-to-br from-gray-700 to-gray-900 text-white"
+            className="project-card p-2 rounded-lg shadow-md hover:shadow-lg transition cursor-pointer bg-gradient-to-br from-gray-700 to-gray-900 text-white"
             onClick={() => handleProjectClick(project)}
           >
-            <h2 className="project-title text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2 text-blue-300">{project.title}</h2>
+            <h2 className="project-title text-sm sm:text-base md:text-lg font-semibold mb-1 text-blue-300">{project.title}</h2>
             <a
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-link"
+              className="project-link text-xs sm:text-sm"
               onClick={(e) => e.stopPropagation()}
             >
               {t.viewProject}
